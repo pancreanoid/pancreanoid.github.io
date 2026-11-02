@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pancreanoid.github.io/sitemap.xml

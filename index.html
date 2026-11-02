@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PANCREANOID — Md Abu Talha Siddique</title>
+
+<!-- ============================================================
+     HOW TO EDIT THIS SITE
+     Everything visible on the page lives in this one file.
+     Search for the word  EDIT  to find every spot you are likely
+     to change (name, text, publications, awards, links).
+     Save the file, upload it to GitHub, and the site updates.
+     ============================================================ -->
+
+<!-- EDIT: search description and social-sharing text -->
+<meta name="description" content="Md Abu Talha Siddique is a doctoral candidate in Pharmaceutics at the University of Florida studying pancreatic cancer initiation, acinar-to-ductal metaplasia, human pancreatic acinar organoids, epigenetics and machine learning.">
+<meta name="author" content="Md Abu Talha Siddique">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#050b16">
+<!-- EDIT: replace with your final site address once it is live -->
+<link rel="canonical" href="https://pancreanoid.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="PANCREANOID">
+<meta property="og:title" content="PANCREANOID — Md Abu Talha Siddique">
+<meta property="og:description" content="Pancreatic cancer initiation, acinar-to-ductal metaplasia, human acinar organoids and machine learning. Research portfolio of a doctoral candidate at the University of Florida.">
+<meta property="og:url" content="https://pancreanoid.github.io/">
+<meta property="og:image" content="https://pancreanoid.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PANCREANOID — Md Abu Talha Siddique">
+<meta name="twitter:description" content="Pancreatic cancer initiation, acinar-to-ductal metaplasia, human acinar organoids and machine learning.">
+<meta name="twitter:image" content="https://pancreanoid.github.io/og-image.png">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Md Abu Talha Siddique",
+  "jobTitle": "Doctoral Candidate, Department of Pharmaceutics",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "University of Florida" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Tuskegee University" },
+    { "@type": "CollegeOrUniversity", "name": "Khulna University" }
+  ],
+  "knowsAbout": ["Pancreatic cancer initiation", "Acinar-to-ductal metaplasia", "Pancreatic organoids", "Transcriptomics", "Epigenetics", "Machine learning", "Pharmacometrics", "PBPK modeling"],
+  "url": "https://pancreanoid.github.io/"
+}
+</script>
+
+<style>
+/* Layout concept: a dark laboratory page. Text sits on a strict left
+   column with a narrow reading measure; the only bright, moving thing
+   is the organoid. Teal is the working colour, cyan is reserved for
+   emphasis and live state. */
+:root {
+  --bg: #050b16;        /* navy-black ground */
+  --bg-2: #0a1627;      /* navy band */
+  --panel: #0d1d33;     /* raised surface */
+  --ink: #e8f2f8;       /* primary text */
+  --ink-2: #a9bfcd;     /* secondary text */
+  --ink-3: #6f8799;     /* captions */
+  --teal: #1fb8a6;
+  --cyan: #5ee7ff;
+  --line: rgba(94, 231, 255, 0.14);
+  --line-strong: rgba(94, 231, 255, 0.32);
+
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --measure: 62ch;
+  --gutter: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  --maxw: 1180px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 40; background: var(--bg);
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.005em; }
+h1 { font-size: clamp(2.5rem, 6.2vw, 4.75rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.5rem; }
+p { margin: 0; max-width: var(--measure); }
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 2px; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+em { font-family: var(--font-display); font-style: italic; font-size: 1.08em; }
+
+.skip { position: absolute; left: var(--gutter); top: -3rem; background: var(--cyan); color: var(--bg); padding: .5rem .9rem; z-index: 100; font-weight: 600; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + .5rem); }
+
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter-r); }
+
+/* ---------- header ---------- */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30;
+  background: rgba(5, 11, 22, 0.72);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .85rem; }
+.brand { display: inline-flex; align-items: center; gap: .6rem; color: var(--ink); font-weight: 700; letter-spacing: .22em; font-size: .78rem; }
+.brand:hover { text-decoration: none; color: var(--cyan); }
+.brand svg { width: 22px; height: 22px; flex: none; }
+.nav { display: flex; gap: 1.6rem; }
+.nav a { color: var(--ink-2); font-size: .92rem; font-weight: 500; position: relative; padding-block: .2rem; }
+.nav a:hover { color: var(--ink); text-decoration: none; }
+.nav a.active { color: var(--cyan); }
+.nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -.15rem; height: 1px; background: var(--cyan); }
+.menu-btn { display: none; background: none; border: 1px solid var(--line-strong); color: var(--ink); padding: .45rem .75rem; border-radius: 4px; font: inherit; font-size: .9rem; cursor: pointer; }
+@media (max-width: 780px) {
+  .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; background: var(--bg-2); border-bottom: 1px solid var(--line); padding-block: .5rem; }
+  .nav.open { display: flex; }
+  .nav a { padding: .8rem var(--gutter); }
+  .nav a.active::after { display: none; }
+  .menu-btn { display: inline-block; }
+}
+
+/* ---------- hero ---------- */
+.hero { position: relative; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 2rem; align-items: center; padding-block: clamp(3rem, 8vw, 7rem) clamp(2rem, 6vw, 5rem); min-height: calc(100svh - 4rem); }
+.hero-copy { position: relative; z-index: 2; }
+.kicker { color: var(--teal); font-weight: 600; font-size: .95rem; margin-bottom: 1.4rem; }
+.hero h1 { margin-bottom: 1.6rem; }
+.lede { font-size: 1.15rem; color: var(--ink-2); max-width: 52ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.2rem; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.25rem; border-radius: 4px; font-weight: 600; font-size: .95rem; border: 1px solid var(--line-strong); color: var(--ink); transition: background .2s, border-color .2s, color .2s; }
+.btn:hover { text-decoration: none; border-color: var(--cyan); background: rgba(94, 231, 255, 0.06); }
+.btn.primary { background: var(--cyan); color: var(--bg); border-color: var(--cyan); }
+.btn.primary:hover { background: #8df0ff; }
+
+.stage { position: relative; aspect-ratio: 1 / 1; max-width: 100%; width: 100%; max-height: 640px; margin-inline: auto; }
+.stage canvas { width: 100% !important; height: 100% !important; display: block; }
+.stage .orb { position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(circle at 35% 35%, rgba(94,231,255,.55), rgba(31,184,166,.28) 45%, rgba(5,11,22,0) 72%); filter: blur(2px); display: none; }
+.stage.fallback canvas { display: none; }
+.stage.fallback .orb { display: block; }
+.stage-caption { position: absolute; left: 0; right: 0; bottom: -.4rem; text-align: center; color: var(--ink-3); font-size: .8rem; }
+.hero-bg { position: absolute; inset: 0; pointer-events: none; background:
+  radial-gradient(60% 50% at 80% 45%, rgba(31,184,166,.14), transparent 70%),
+  radial-gradient(40% 40% at 15% 90%, rgba(94,231,255,.07), transparent 70%); }
+
+@media (max-width: 900px) {
+  .hero .wrap { grid-template-columns: 1fr; min-height: 0; padding-block: 1.5rem 3rem; }
+  .stage { order: -1; max-height: 340px; aspect-ratio: auto; height: 320px; }
+  .stage-caption { display: none; }
+}
+
+/* ---------- sections ---------- */
+.section { padding-block: clamp(4rem, 9vw, 7.5rem); border-top: 1px solid var(--line); }
+.section.band { background: var(--bg-2); }
+.section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 1.5rem 3rem; align-items: start; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.section-head p { color: var(--ink-2); font-size: 1.1rem; max-width: 56ch; }
+@media (max-width: 780px) { .section-head { grid-template-columns: 1fr; } }
+
+/* status tags: encode what is published versus in progress */
+.status { display: inline-flex; align-items: center; gap: .45rem; font-size: .78rem; font-weight: 600; color: var(--ink-2); border: 1px solid var(--line-strong); border-radius: 999px; padding: .2rem .7rem .2rem .55rem; white-space: nowrap; }
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+.status.ongoing::before { background: var(--cyan); box-shadow: 0 0 0 3px rgba(94,231,255,.18); }
+.status.placeholder { color: var(--ink-3); border-style: dashed; }
+.status.placeholder::before { background: var(--ink-3); }
+.status.award::before { background: #ffd166; }
+.legend { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: center; color: var(--ink-3); font-size: .85rem; margin-top: 1rem; }
+
+/* research areas */
+.areas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 900px) { .areas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .areas { grid-template-columns: 1fr; } }
+.area { background: var(--bg); padding: 1.6rem 1.5rem 1.8rem; display: flex; flex-direction: column; gap: .8rem; transition: background .25s; }
+.area:hover { background: var(--panel); }
+.area h3 { font-size: 1.45rem; }
+.area p { color: var(--ink-2); font-size: .98rem; }
+.area .status { align-self: flex-start; margin-top: auto; }
+.band .area { background: var(--bg-2); }
+.band .area:hover { background: var(--panel); }
+
+/* ADM figure */
+.figure { margin-top: clamp(2.5rem, 6vw, 4.5rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 3rem; align-items: center; }
+@media (max-width: 860px) { .figure { grid-template-columns: 1fr; } }
+.figure-art { background: radial-gradient(circle at 50% 50%, rgba(31,184,166,.12), transparent 65%); border: 1px solid var(--line); padding: 1.2rem; }
+.figure-art svg { width: 100%; height: auto; display: block; max-width: 520px; margin-inline: auto; }
+.figure-text h3 { font-size: 1.7rem; margin-bottom: .8rem; }
+.figure-text p { color: var(--ink-2); }
+.slider { margin-top: 1.4rem; }
+.slider label { display: flex; justify-content: space-between; font-size: .85rem; color: var(--ink-3); margin-bottom: .4rem; }
+.slider output { color: var(--cyan); font-variant-numeric: tabular-nums; }
+input[type=range] { width: 100%; accent-color: var(--cyan); }
+.markers { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.2rem; font-size: .9rem; }
+.markers div { border-top: 1px solid var(--line); padding-top: .6rem; }
+.markers strong { display: block; color: var(--ink); font-weight: 600; margin-bottom: .2rem; }
+.markers span { color: var(--ink-2); }
+.figure-note { color: var(--ink-3); font-size: .85rem; margin-top: 1rem; }
+
+/* ML pipeline */
+.pipeline { counter-reset: step; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .75rem; margin-top: 2.5rem; }
+@media (max-width: 1000px) { .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .pipeline { grid-template-columns: 1fr; } }
+.step { position: relative; border: 1px solid var(--line); padding: 1.2rem 1.1rem 1.3rem; background: var(--bg-2); min-width: 0; transition: border-color .25s, background .25s; }
+.step:hover, .step:focus-within { border-color: var(--line-strong); background: var(--panel); }
+.step::before { counter-increment: step; content: counter(step); font-family: var(--font-display); font-size: 1.6rem; color: var(--teal); display: block; line-height: 1; margin-bottom: .8rem; }
+.step h3 { font-size: 1.25rem; margin-bottom: .5rem; }
+.step p { font-size: .92rem; color: var(--ink-2); }
+.ml-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 2rem 3rem; align-items: start; margin-top: 2.5rem; }
+@media (max-width: 860px) { .ml-grid { grid-template-columns: 1fr; } }
+.ml-grid p + p { margin-top: 1rem; }
+.ml-grid p { color: var(--ink-2); }
+.callout { border-left: 2px solid var(--cyan); padding: .2rem 0 .2rem 1.2rem; }
+.callout h3 { font-size: 1.3rem; margin-bottom: .6rem; }
+.callout ul { display: grid; gap: .55rem; color: var(--ink-2); font-size: .95rem; }
+.callout li { padding-left: 1.1rem; position: relative; }
+.callout li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 1px; background: var(--teal); }
+
+/* publications */
+.pubs { display: grid; gap: 1px; background: var(--line); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pub { background: var(--bg-2); display: grid; grid-template-columns: 7rem minmax(0, 1fr) auto; gap: 1rem 1.5rem; padding: 1.3rem 0; align-items: start; }
+.pub .year { font-family: var(--font-display); font-size: 1.35rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.pub h3 { font-size: 1.25rem; font-family: var(--font-body); font-weight: 600; line-height: 1.35; }
+.pub .meta { color: var(--ink-2); font-size: .95rem; margin-top: .3rem; }
+.pub .meta a { color: var(--cyan); }
+@media (max-width: 640px) { .pub { grid-template-columns: 1fr; gap: .4rem; } .pub .status { justify-self: start; } }
+.group-title { font-size: 1.1rem; font-family: var(--font-body); font-weight: 600; color: var(--ink); margin: 2.6rem 0 .9rem; }
+.note { background: rgba(94,231,255,.05); border: 1px dashed var(--line-strong); padding: 1rem 1.2rem; color: var(--ink-2); font-size: .95rem; max-width: var(--measure); }
+
+/* awards */
+.awards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.award { border-top: 2px solid var(--teal); padding-top: 1.1rem; }
+.award .year { font-family: var(--font-display); font-size: 2.4rem; line-height: 1; color: var(--cyan); font-variant-numeric: tabular-nums; }
+.award h3 { font-size: 1.35rem; margin: .7rem 0 .4rem; }
+.award p { color: var(--ink-2); font-size: .95rem; }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem 3rem; }
+.skill-group h3 { font-size: 1.4rem; margin-bottom: .9rem; }
+.skill-group ul { display: flex; flex-wrap: wrap; gap: .5rem; }
+.skill-group li { border: 1px solid var(--line-strong); border-radius: 999px; padding: .3rem .8rem; font-size: .9rem; color: var(--ink-2); }
+
+/* bio */
+.bio { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2.5rem 4rem; align-items: start; }
+@media (max-width: 860px) { .bio { grid-template-columns: 1fr; } }
+.bio-text p { color: var(--ink-2); }
+.bio-text p + p { margin-top: 1.1rem; }
+.timeline { position: relative; padding-left: 1.6rem; display: grid; gap: 1.6rem; }
+.timeline::before { content: ""; position: absolute; left: 4px; top: .5rem; bottom: .5rem; width: 1px; background: var(--line-strong); }
+.timeline li { position: relative; }
+.timeline li::before { content: ""; position: absolute; left: calc(-1.6rem + 1px); top: .55rem; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+.timeline li.now::before { background: var(--cyan); box-shadow: 0 0 0 4px rgba(94,231,255,.18); }
+.timeline strong { display: block; font-weight: 600; }
+.timeline span { color: var(--ink-2); font-size: .95rem; }
+
+/* contact */
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2.5rem 4rem; align-items: start; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+.email { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; margin-top: 1.4rem; }
+.email code { font-family: var(--font-body); font-size: 1.1rem; color: var(--cyan); background: rgba(94,231,255,.07); padding: .5rem .8rem; border-radius: 4px; user-select: all; }
+.copy { background: none; border: 1px solid var(--line-strong); color: var(--ink); padding: .5rem .8rem; border-radius: 4px; font: inherit; font-size: .9rem; cursor: pointer; }
+.copy:hover { border-color: var(--cyan); }
+.links { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.links a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem 1.1rem; background: var(--bg); color: var(--ink); }
+.links a:hover { background: var(--panel); text-decoration: none; color: var(--cyan); }
+.links small { color: var(--ink-3); font-size: .8rem; }
+
+/* footer */
+footer { border-top: 1px solid var(--line); padding-block: 2rem calc(2rem + env(safe-area-inset-bottom, 0px)); color: var(--ink-3); font-size: .85rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+/* hero load sequence (the one orchestrated moment) */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-copy > :nth-child(2) { animation-delay: .08s; }
+  .hero-copy > :nth-child(3) { animation-delay: .16s; }
+  .hero-copy > :nth-child(4) { animation-delay: .24s; }
+  .stage { animation: appear 1.6s ease .2s both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="PANCREANOID home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#5ee7ff" stroke-width="1.2"/><circle cx="9" cy="10" r="2.2" fill="#1fb8a6"/><circle cx="15" cy="9" r="1.8" fill="#5ee7ff"/><circle cx="14" cy="15" r="2.4" fill="#1fb8a6"/><circle cx="8.5" cy="15.5" r="1.5" fill="#5ee7ff"/></svg>
+      PANCREANOID
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#ml">Machine learning</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ========================= HERO ========================= -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <!-- EDIT: your name and position -->
+      <p class="kicker">Md Abu Talha Siddique · Doctoral candidate, Department of Pharmaceutics, University of Florida</p>
+      <h1>Tracing the first steps of pancreatic cancer in human acinar cells.</h1>
+      <p class="lede">I study acinar-to-ductal metaplasia, the identity shift in which digestive-enzyme-producing acinar cells take on duct-like features. It is one of the earliest events on the road to pancreatic cancer. My work combines human pancreatic acinar organoids, transcriptomics and epigenetics with machine learning to understand how and why this transition begins.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#research">Explore the research</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="stage" id="stage">
+      <canvas id="organoid" aria-label="Animated 3D rendering of a pancreatic organoid: a hollow sphere of cells" role="img"></canvas>
+      <div class="orb" aria-hidden="true"></div>
+      <p class="stage-caption">Stylised organoid. Move your cursor to turn it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= RESEARCH AREAS ========================= -->
+<section class="section" id="research">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Research areas</h2>
+      <div>
+        <p>Pancreatic ductal adenocarcinoma is usually found late, which is why the earliest, pre-cancerous events matter so much. My doctoral research focuses on one of them, acinar-to-ductal metaplasia, and on building human cell models and computational tools to study it.</p>
+        <div class="legend" aria-label="How to read the status labels">
+          <span class="status ongoing">Ongoing research</span>
+          <span class="status">Published</span>
+          <span>Labels mark whether a line of work is still in progress or has been peer-reviewed. Nothing on this site is a clinical or diagnostic tool.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="areas">
+      <article class="area">
+        <h3>Pancreatic cancer initiation</h3>
+        <p>How a normal pancreas becomes the ground for cancer. I am interested in the cell states, injuries and signals that come before a tumour exists, when intervention might still be possible.</p>
+        <span class="status ongoing">Ongoing research</span>
+      </article>
+      <article class="area">
+        <h3>Acinar-to-ductal metaplasia</h3>
+        <p>Acinar cells can be pushed to lose their secretory identity and adopt a ductal-like programme. I study what drives that plasticity and how it can be measured in human cells rather than only in mouse models.</p>
+        <span class="status ongoing">Ongoing research</span>
+      </article>
+      <article class="area">
+        <h3>Human pancreatic acinar organoids</h3>
+        <p>Three-dimensional cultures grown from human pancreatic tissue give a human-specific model of the acinar compartment. I use them to follow the acinar-to-ductal transition under controlled conditions.</p>
+        <span class="status ongoing">Ongoing research</span>
+      </article>
+      <article class="area">
+        <h3>Transcriptomics and epigenetics</h3>
+        <p>Gene expression and chromatin state record how a cell's identity is maintained or lost. I use transcriptomic and epigenetic profiling to characterise acinar states and the changes that accompany metaplasia.</p>
+        <span class="status ongoing">Ongoing research</span>
+      </article>
+      <article class="area">
+        <h3>Computational biology</h3>
+        <p>Python and R pipelines for high-dimensional biological data, from quality control and normalisation to statistical modelling, classification and visualisation.</p>
+        <span class="status ongoing">Ongoing research</span>
+      </article>
+      <article class="area">
+        <h3>Pharmacometrics and PBPK modelling</h3>
+        <p>Quantitative pharmacology training in population pharmacokinetic and physiologically based pharmacokinetic models, which inform how I think about dose, exposure and response.</p>
+        <span class="status">Training and prior work</span>
+      </article>
+    </div>
+
+    <!-- Interactive ADM figure -->
+    <div class="figure">
+      <div class="figure-art">
+        <svg id="adm" viewBox="-130 -130 260 260" role="img" aria-labelledby="admTitle admDesc">
+          <title id="admTitle">Acinar-to-ductal metaplasia, schematic</title>
+          <desc id="admDesc">A ring of wedge-shaped acinar cells around a small lumen transforms into flatter duct-like cells around a wider lumen as the slider moves.</desc>
+          <defs>
+            <radialGradient id="lumenGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#5ee7ff" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#5ee7ff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle id="lumen" cx="0" cy="0" r="12" fill="url(#lumenGrad)"/>
+          <g id="cells"></g>
+          <g id="granules"></g>
+          <g id="nuclei"></g>
+          <text id="labelA" x="0" y="-112" text-anchor="middle" font-size="9" fill="#a9bfcd" font-family="Manrope, sans-serif">Acinar cell · zymogen granules · narrow lumen</text>
+          <text id="labelD" x="0" y="118" text-anchor="middle" font-size="9" fill="#5ee7ff" font-family="Manrope, sans-serif" opacity="0">Ductal-like cell · granules lost · widened lumen</text>
+        </svg>
+      </div>
+      <div class="figure-text">
+        <h3>What metaplasia looks like</h3>
+        <p>In a healthy acinus, pyramidal cells packed with enzyme-filled granules surround a tiny lumen. During acinar-to-ductal metaplasia the granules are lost, the cells flatten, the lumen widens and duct-associated genes switch on. The schematic is a simplification; real tissue is messier.</p>
+        <div class="slider">
+          <label for="admRange"><span>Acinar</span><output id="admOut" for="admRange">0%</output><span>Ductal-like</span></label>
+          <input type="range" id="admRange" min="0" max="100" value="0" aria-label="Transition from acinar to ductal-like state">
+        </div>
+        <div class="markers" aria-label="Typical marker changes">
+          <div><strong>Acinar programme</strong><span>PTF1A, CPA1, amylase: high, then falling</span></div>
+          <div><strong>Ductal programme</strong><span>SOX9, KRT19: low, then rising</span></div>
+        </div>
+        <p class="figure-note">Marker behaviour shown here reflects the general literature on acinar-to-ductal metaplasia, not a result from my own experiments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= MACHINE LEARNING ========================= -->
+<section class="section band" id="ml">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Machine learning for acinar subtype classification</h2>
+      <div>
+        <p>Acinar cells are not a single uniform population. I am building classifiers that read transcriptomic profiles and assign cells or samples to acinar subtypes and states, so that the earliest steps toward a ductal-like identity can be described quantitatively.</p>
+        <div class="legend"><span class="status ongoing">Ongoing research</span><span>Methods and results are in development and have not yet been peer-reviewed or independently validated.</span></div>
+      </div>
+    </div>
+
+    <ol class="pipeline" aria-label="Analysis pipeline">
+      <li class="step"><h3>Human acinar organoids</h3><p>Culture human pancreatic acinar organoids and expose them to defined conditions that promote or restrain metaplasia.</p></li>
+      <li class="step"><h3>Transcriptomic profiling</h3><p>Measure gene expression to capture acinar, intermediate and ductal-like states across conditions and time.</p></li>
+      <li class="step"><h3>Feature engineering</h3><p>Normalise, filter and select informative genes and gene programmes; integrate epigenetic features where available.</p></li>
+      <li class="step"><h3>Classification</h3><p>Train and cross-validate supervised models that assign acinar subtype or state labels, with attention to class balance and leakage.</p></li>
+      <li class="step"><h3>Interpretation</h3><p>Inspect which features drive the predictions and test whether they correspond to known biology, then design the next experiment.</p></li>
+    </ol>
+
+    <div class="ml-grid">
+      <div>
+        <p>The goal is a reproducible way to describe where a cell sits between a fully acinar and a ductal-like identity. That matters for comparing experimental conditions, for interpreting human samples and for asking which molecular changes come first.</p>
+        <p>Model choice is driven by data size and interpretability. Regularised linear models and tree-based ensembles are the first pass; deeper architectures are considered only where the data support them. Every model is evaluated on held-out data and reported with its limitations.</p>
+      </div>
+      <aside class="callout">
+        <h3>What this work is and is not</h3>
+        <ul>
+          <li>A research tool for classifying cell states in experimental and transcriptomic data.</li>
+          <li>Not a diagnostic test, and not validated for any clinical use.</li>
+          <li>Results will be posted here as preprints or peer-reviewed papers once they exist.</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PUBLICATIONS ========================= -->
+<section class="section" id="publications">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Publications and presentations</h2>
+      <div>
+        <p>Peer-reviewed articles, preprints and conference presentations. Each entry carries a status label so that in-progress work is never mistaken for a published finding.</p>
+        <div class="legend"><span class="status">Published</span><span class="status ongoing">In preparation</span><span class="status placeholder">Placeholder, to be confirmed</span></div>
+      </div>
+    </div>
+
+    <!-- EDIT: Replace the placeholder entries below with verified citations.
+         Copy one <li class="pub"> block per publication. Keep the status label honest. -->
+    <p class="note">Verified citations are being added. Entries marked as placeholders will be replaced with the full author list, journal, year and DOI once confirmed against the published record.</p>
+
+    <h3 class="group-title">Journal articles</h3>
+    <ul class="pubs">
+      <li class="pub">
+        <span class="year">[Year]</span>
+        <div>
+          <h3>[Title of peer-reviewed article]</h3>
+          <p class="meta">[Authors] · [Journal], [volume(issue)], [pages] · <a href="#">[DOI link]</a></p>
+        </div>
+        <span class="status placeholder">Placeholder</span>
+      </li>
+    </ul>
+
+    <h3 class="group-title">Conference presentations</h3>
+    <ul class="pubs">
+      <li class="pub">
+        <span class="year">2026</span>
+        <div>
+          <h3>[Abstract or poster title]</h3>
+          <p class="meta">American Society for Clinical Pharmacology and Therapeutics (ASCPT) 2026 Annual Meeting · Recognised with the ASCPT Presidential Trainee Award · Confirm title, co-authors and format</p>
+        </div>
+        <span class="status placeholder">Placeholder</span>
+      </li>
+      <li class="pub">
+        <span class="year">2025</span>
+        <div>
+          <h3>[Poster title]</h3>
+          <p class="meta">Poster presentation, UF Health Cancer Center Research Showcase, University of Florida · Poster finalist · Confirm title and co-authors</p>
+        </div>
+        <span class="status placeholder">Placeholder</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========================= AWARDS ========================= -->
+<section class="section band" id="awards">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Awards and recognition</h2>
+      <p>Honours received during doctoral training.</p>
+    </div>
+    <!-- EDIT: add new awards by copying an <article class="award"> block -->
+    <div class="awards">
+      <article class="award">
+        <div class="year">2026</div>
+        <h3>ASCPT Presidential Trainee Award</h3>
+        <p>American Society for Clinical Pharmacology and Therapeutics. Awarded to trainees for highly ranked abstracts submitted to the Annual Meeting.</p>
+      </article>
+      <article class="award">
+        <div class="year">2025</div>
+        <h3>Research Showcase poster finalist</h3>
+        <p>UF Health Cancer Center Research Showcase, University of Florida.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SKILLS ========================= -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Technical skills</h2>
+      <p>Bench and computational methods used in my research and training.</p>
+    </div>
+    <!-- EDIT: add or remove skills freely -->
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Programming and data</h3>
+        <ul><li>Python</li><li>R</li><li>Machine learning</li><li>Statistical modelling</li><li>Data visualisation</li><li>Reproducible pipelines</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Bioinformatics</h3>
+        <ul><li>Transcriptomic analysis</li><li>Epigenomic analysis</li><li>Differential expression</li><li>Pathway and gene-set analysis</li><li>Cell state classification</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Quantitative pharmacology</h3>
+        <ul><li>Pharmacometrics</li><li>PBPK modelling</li><li>Pharmacokinetics</li><li>Dose–exposure–response analysis</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Laboratory</h3>
+        <ul><li>3D organoid culture</li><li>Primary human tissue handling</li><li>Molecular biology</li><li>Pharmaceutical manufacturing (industry)</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= ABOUT ========================= -->
+<section class="section band" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+      <p>From pharmacy and manufacturing to cancer biology and computation.</p>
+    </div>
+    <div class="bio">
+      <div class="bio-text">
+        <!-- EDIT: biography text -->
+        <p>I am Md Abu Talha Siddique, a doctoral candidate in the Department of Pharmaceutics at the University of Florida College of Pharmacy. My research asks how pancreatic cancer gets started, with a focus on acinar-to-ductal metaplasia in human pancreatic acinar organoids and on the transcriptomic and epigenetic changes that accompany it.</p>
+        <p>I trained first as a pharmacist, earning a Bachelor of Pharmacy from Khulna University in Bangladesh, and then worked in pharmaceutical manufacturing before returning to research. A Master of Science in Biology from Tuskegee University moved me toward cell and molecular biology, and my doctoral work at Florida brought those threads together with quantitative pharmacology and machine learning.</p>
+        <p>The name of this site, PANCREANOID, joins pancreas and organoid: the human model system at the centre of my work.</p>
+      </div>
+      <ol class="timeline" aria-label="Career timeline">
+        <li class="now"><strong>Doctoral candidate, Pharmaceutics</strong><span>University of Florida College of Pharmacy · present</span></li>
+        <li><strong>MSc in Biology</strong><span>Tuskegee University</span></li>
+        <li><strong>Pharmaceutical manufacturing</strong><span>Industry experience before graduate research</span></li>
+        <li><strong>Bachelor of Pharmacy</strong><span>Khulna University</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CONTACT ========================= -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h2>Contact</h2>
+        <p style="margin-top:1rem;color:var(--ink-2)">I welcome conversations about pancreatic cancer biology, organoid models, computational methods and collaboration. Email is the most reliable way to reach me.</p>
+        <!-- EDIT: replace the placeholder email address -->
+        <div class="email">
+          <code id="emailText">your.email@ufl.edu</code>
+          <button class="copy" id="copyBtn" type="button">Copy</button>
+        </div>
+        <p class="figure-note">Department of Pharmaceutics, College of Pharmacy, University of Florida, Gainesville, Florida.</p>
+      </div>
+      <!-- EDIT: put your real profile links in the href="" of each line -->
+      <div class="links">
+        <a href="#" data-placeholder>Google Scholar <small>add link</small></a>
+        <a href="#" data-placeholder>ORCID <small>add link</small></a>
+        <a href="#" data-placeholder>LinkedIn <small>add link</small></a>
+        <a href="#" data-placeholder>GitHub <small>add link</small></a>
+        <a href="#" data-placeholder>ResearchGate <small>add link</small></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Md Abu Talha Siddique · PANCREANOID</span>
+    <span>Personal research portfolio. Views are my own and do not represent the University of Florida.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ============================================================
+   Page behaviour. You should not need to edit anything below.
+   ============================================================ */
+(function () {
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- menu ---- */
+  var menuBtn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); } });
+  }
+
+  /* ---- active section in nav ---- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var sections = navLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          navLinks.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id); });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+
+  /* ---- copy email ---- */
+  var copyBtn = document.getElementById('copyBtn'), emailText = document.getElementById('emailText');
+  if (copyBtn) copyBtn.addEventListener('click', function () {
+    var txt = emailText.textContent.trim();
+    var done = function () { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done, function () { selectText(); });
+    } else { selectText(); }
+    function selectText() { var r = document.createRange(); r.selectNodeContents(emailText); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('[data-placeholder]').forEach(function (a) { a.addEventListener('click', function (e) { if (a.getAttribute('href') === '#') e.preventDefault(); }); });
+
+  /* ---- ADM schematic ---- */
+  (function () {
+    var svg = document.getElementById('adm'); if (!svg) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    var N = 9, cellsG = document.getElementById('cells'), granG = document.getElementById('granules'), nucG = document.getElementById('nuclei');
+    var lumen = document.getElementById('lumen'), labelA = document.getElementById('labelA'), labelD = document.getElementById('labelD');
+    var range = document.getElementById('admRange'), out = document.getElementById('admOut');
+    var cells = [], nuclei = [], granules = [];
+    function polar(r, a) { return [r * Math.cos(a), r * Math.sin(a)]; }
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    for (var i = 0; i < N; i++) {
+      var p = document.createElementNS(NS, 'path');
+      p.setAttribute('stroke', '#050b16'); p.setAttribute('stroke-width', '2'); p.setAttribute('stroke-linejoin', 'round');
+      cellsG.appendChild(p); cells.push(p);
+      var nu = document.createElementNS(NS, 'ellipse'); nu.setAttribute('fill', '#0a1627'); nu.setAttribute('stroke', '#5ee7ff'); nu.setAttribute('stroke-width', '1'); nucG.appendChild(nu); nuclei.push(nu);
+      var gset = [];
+      for (var g = 0; g < 7; g++) { var c = document.createElementNS(NS, 'circle'); c.setAttribute('r', (1.6 + (g % 3) * 0.5).toFixed(1)); c.setAttribute('fill', '#5ee7ff'); granG.appendChild(c); gset.push(c); }
+      granules.push(gset);
+    }
+    function draw(t) {
+      var rIn = lerp(12, 48, t), rOut = lerp(84, 74, t), gap = 0.035;
+      lumen.setAttribute('r', (rIn + 4).toFixed(1));
+      for (var i = 0; i < N; i++) {
+        var a0 = (i / N) * Math.PI * 2 + gap, a1 = ((i + 1) / N) * Math.PI * 2 - gap, am = (a0 + a1) / 2;
+        var p0 = polar(rIn, a0), p1 = polar(rOut, a0), p2 = polar(rOut, a1), p3 = polar(rIn, a1);
+        cells[i].setAttribute('d', 'M' + p0 + ' L' + p1 + ' A' + rOut + ',' + rOut + ' 0 0 1 ' + p2 + ' L' + p3 + ' A' + rIn + ',' + rIn + ' 0 0 0 ' + p0 + ' Z');
+        cells[i].style.fill = 'rgb(' + Math.round(lerp(18, 38, t)) + ',' + Math.round(lerp(110, 150, t)) + ',' + Math.round(lerp(112, 170, t)) + ')';
+        cells[i].style.fillOpacity = (0.75 - t * 0.2).toFixed(2);
+        var nr = lerp(68, 61, t), nc = polar(nr, am);
+        nuclei[i].setAttribute('cx', nc[0].toFixed(1)); nuclei[i].setAttribute('cy', nc[1].toFixed(1));
+        nuclei[i].setAttribute('rx', lerp(5.5, 4.2, t).toFixed(1)); nuclei[i].setAttribute('ry', lerp(5.5, 5.8, t).toFixed(1));
+        nuclei[i].setAttribute('transform', 'rotate(' + (am * 180 / Math.PI) + ' ' + nc[0].toFixed(1) + ' ' + nc[1].toFixed(1) + ')');
+        for (var g = 0; g < 7; g++) {
+          var gr = lerp(rIn + 10, rIn + 36, (g + 1) / 8), ga = a0 + (a1 - a0) * (0.25 + 0.5 * ((g * 7) % 5) / 4);
+          var gp = polar(gr, ga);
+          granules[i][g].setAttribute('cx', gp[0].toFixed(1)); granules[i][g].setAttribute('cy', gp[1].toFixed(1));
+          granules[i][g].setAttribute('opacity', Math.max(0, 1 - t * 1.6).toFixed(2));
+        }
+      }
+      labelA.setAttribute('opacity', (1 - t).toFixed(2)); labelD.setAttribute('opacity', t.toFixed(2));
+    }
+    var touched = false, current = 0;
+    draw(0);
+    range.addEventListener('input', function () { touched = true; current = range.value / 100; draw(current); out.textContent = range.value + '%'; });
+    function onScroll() {
+      if (touched || reduceMotion) return;
+      var r = svg.getBoundingClientRect(), vh = window.innerHeight || 800;
+      var t = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (vh * 0.9)));
+      if (Math.abs(t - current) > 0.004) { current = t; draw(t); range.value = Math.round(t * 100); out.textContent = Math.round(t * 100) + '%'; }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  })();
+
+  /* ---- 3D organoid ---- */
+  (function () {
+    var stage = document.getElementById('stage'), canvas = document.getElementById('organoid'); if (!stage || !canvas) return;
+    function fallback() { stage.classList.add('fallback'); }
+    if (!window.THREE) { fallback(); return; }
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
+    } catch (e) { fallback(); return; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100); camera.position.set(0, 0, 7.4);
+    var group = new THREE.Group(); scene.add(group);
+
+    scene.add(new THREE.AmbientLight(0x244a6a, 1.1));
+    var key = new THREE.PointLight(0x5ee7ff, 1.05, 40); key.position.set(4, 3.5, 5); scene.add(key);
+    var rim = new THREE.PointLight(0x1fb8a6, 1.2, 40); rim.position.set(-5, -2, -3); scene.add(rim);
+    var fill = new THREE.PointLight(0x2b63d9, 0.5, 40); fill.position.set(0, -4, 4); scene.add(fill);
+
+    var N = 150, geo = new THREE.IcosahedronGeometry(1, 2);
+    var mat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.55, metalness: 0.08, transparent: true, opacity: 0.9 });
+    var cells = new THREE.InstancedMesh(geo, mat, N);
+    var dummy = new THREE.Object3D(), base = [], color = new THREE.Color();
+    var golden = Math.PI * (3 - Math.sqrt(5));
+    for (var i = 0; i < N; i++) {
+      var y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), th = golden * i;
+      var inner = (i % 6 === 0);
+      var R = inner ? 0.95 + Math.random() * 0.25 : 1.78 + Math.sin(i * 1.7) * 0.08 + Math.random() * 0.08;
+      var s = inner ? 0.18 + Math.random() * 0.07 : 0.22 + Math.random() * 0.1;
+      base.push({ x: Math.cos(th) * r * R, y: y * R, z: Math.sin(th) * r * R, s: s, ph: Math.random() * Math.PI * 2 });
+      var mix = Math.random();
+      /* darker teal through to cyan, so the cluster reads as cells rather than balloons */
+      color.setRGB(0.04 + mix * 0.14, 0.32 + mix * 0.4, 0.38 + mix * 0.42);
+      cells.setColorAt(i, color);
+    }
+    group.add(cells);
+
+    var lumen = new THREE.Mesh(new THREE.SphereGeometry(1.25, 32, 32), new THREE.MeshPhongMaterial({ color: 0x5ee7ff, emissive: 0x0b3a44, transparent: true, opacity: 0.16, shininess: 90 }));
+    group.add(lumen);
+    var shell = new THREE.Mesh(new THREE.SphereGeometry(2.3, 40, 40), new THREE.MeshBasicMaterial({ color: 0x5ee7ff, transparent: true, opacity: 0.045, wireframe: true }));
+    group.add(shell);
+
+    var P = 420, pos = new Float32Array(P * 3);
+    for (var p = 0; p < P; p++) {
+      var pr = 2.7 + Math.random() * 1.8, u = Math.random() * 2 - 1, v = Math.random() * Math.PI * 2, rr = Math.sqrt(1 - u * u);
+      pos[p * 3] = Math.cos(v) * rr * pr; pos[p * 3 + 1] = u * pr; pos[p * 3 + 2] = Math.sin(v) * rr * pr;
+    }
+    var pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    var points = new THREE.Points(pg, new THREE.PointsMaterial({ color: 0x5ee7ff, size: 0.035, transparent: true, opacity: 0.55, sizeAttenuation: true }));
+    group.add(points);
+
+    function resize() {
+      var w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
+      renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+    }
+    resize(); window.addEventListener('resize', resize);
+
+    var targetX = 0, targetY = 0, tiltX = 0, tiltY = 0;
+    window.addEventListener('pointermove', function (e) {
+      var r = stage.getBoundingClientRect(), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      targetY = Math.max(-1, Math.min(1, (e.clientX - cx) / (window.innerWidth / 2))) * 0.35;
+      targetX = Math.max(-1, Math.min(1, (e.clientY - cy) / (window.innerHeight / 2))) * 0.25;
+    }, { passive: true });
+
+    var visible = true, running = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }).observe(stage);
+    document.addEventListener('visibilitychange', function () { running = !document.hidden; });
+
+    function frame(t) {
+      t = (t || 0) * 0.001;
+      for (var i = 0; i < N; i++) {
+        var b = base[i], br = 1 + Math.sin(t * 1.1 + b.ph) * 0.045;
+        dummy.position.set(b.x * br, b.y * br, b.z * br);
+        dummy.scale.setScalar(b.s * (1 + Math.sin(t * 1.7 + b.ph * 2) * 0.08));
+        dummy.rotation.set(b.ph, t * 0.1, 0);
+        dummy.updateMatrix(); cells.setMatrixAt(i, dummy.matrix);
+      }
+      cells.instanceMatrix.needsUpdate = true;
+      lumen.scale.setScalar(1 + Math.sin(t * 0.9) * 0.05);
+      tiltX += (targetX - tiltX) * 0.04; tiltY += (targetY - tiltY) * 0.04;
+      group.rotation.y = t * 0.12 + tiltY; group.rotation.x = Math.sin(t * 0.3) * 0.08 + tiltX;
+      points.rotation.y = -t * 0.05; points.rotation.z = t * 0.03;
+      renderer.render(scene, camera);
+    }
+    if (reduceMotion) { frame(0); return; }
+    function loop(t) { if (visible && running) frame(t); requestAnimationFrame(loop); }
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
+</body>
+</html>
